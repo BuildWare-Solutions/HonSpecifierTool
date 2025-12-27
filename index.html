@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solutions Architecture Estimator</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e88e5" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<div class="app">
+    <!-- Top Bar -->
+    <header class="topbar">
+        <div class="topbar__left">
+            <div class="app-title">Solutions Architecture Estimator</div>
+        </div>
+
+        <button class="icon-btn mobile-only" id="hamburgerBtn" aria-label="Open menu">
+            <span class="hamburger"></span>
+        </button>
+    </header>
+
+    <!-- Desktop process nav -->
+    <nav class="process-nav desktop-only" aria-label="Progress navigation">
+        <div class="process">
+            <button class="process__item" data-route="project">
+                <span class="process__label">Project details</span>
+                <span class="process__dot"></span>
+            </button>
+
+            <div class="process__line" aria-hidden="true"></div>
+
+            <button class="process__item" data-route="building">
+                <span class="process__label">Building details</span>
+                <span class="process__dot"></span>
+            </button>
+
+            <div class="process__line" aria-hidden="true"></div>
+
+            <button class="process__item" data-route="solution">
+                <span class="process__label">Solution</span>
+                <span class="process__dot"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+    <aside class="drawer" id="drawer" aria-label="Navigation drawer" aria-hidden="true">
+        <div class="drawer__header">
+            <div class="drawer__title">Solutions Architecture Estimator</div>
+            <button class="icon-btn" id="drawerCloseBtn" aria-label="Close menu">✕</button>
+        </div>
+
+        <nav class="drawer__nav">
+            <button class="drawer__link" data-route="project">Project details</button>
+            <button class="drawer__link" data-route="building">Building details</button>
+            <button class="drawer__link" data-route="solution">Solution</button>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+        <section class="card">
+            <div id="viewRoot"></div>
+        </section>
+    </main>
+</div>
+
+<!-- Hidden file input for JSON loading -->
+<input type="file" id="jsonFileInput" accept="application/json" hidden />
+
+<script src="app.js"></script>
+</body>
+</html>
